@@ -30,7 +30,7 @@ const Layout = ({ onLogout, user }) => {
     }
     catch (error){
       console.error(error)
-      setError(err.message || "could not load tasks")
+      setError(error.message || "could not load tasks")
     }
     finally {
       setLoading(false)

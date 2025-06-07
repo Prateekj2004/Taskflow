@@ -10,6 +10,8 @@ import {
     Calendar,
 } from "lucide-react"
 
+import { useState } from "react";
+
 // BACKEND TEST 
 // DUMMY DATA
 const backendDummy = [
@@ -285,7 +287,7 @@ export const TI_CLASSES = {
     dateRow: "flex items-center gap-1.5 text-xs font-medium whitespace-nowrap",
     createdRow: "flex items-center gap-1.5 text-xs text-gray-400 whitespace-nowrap",
 }
-// APP.JSX
+// // APP.JSX
 // const user = {
 //       avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(data.name || 'User')}&background=random`
 //     };

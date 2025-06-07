@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, Route, Routes, useNavigate } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './components/Login.jsx';
 import Layout from './components/Layout.jsx';
 import SignUp from './components/SignUp.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 
 const App = () => {
   const navigate = useNavigate();
@@ -59,12 +60,12 @@ const App = () => {
           </div>
         }
       />
-
-      {/* Protected Layout */}
-      <Route element={<ProtectedLayout />}>
-        <Route path="/" element={<div className="p-6 text-xl">Welcome to TaskFlow</div>} />
-        {/* Add other protected routes here */}
+      <Route element={currentUser ? <ProtectedLayout /> : <Navigate to="/login" replace />}>
+        <Route path="/" element={<Dashboard/>} />
       </Route>
+
+      <Route path='*' element={<Navigate to={currentUser ?'/':'/login'} replace/>}/>
+
     </Routes>
   );
 };
