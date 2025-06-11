@@ -12,7 +12,7 @@ userRouter.post('/login',loginUser);
 //private link protect also
 
 userRouter.get('/me',authMiddleware, getCurrentUser);
-userRouter.get('/profile',authMiddleware, updateProfile);
+userRouter.put('/profile',authMiddleware, updateProfile);
 userRouter.put('/password',authMiddleware, updatePassword);
 
 export default userRouter; 
